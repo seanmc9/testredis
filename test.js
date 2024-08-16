@@ -14,11 +14,11 @@ const client = await createClient(
   .connect();
 
 // PUBLISHING
-await client.publish('myradioshow', 'hello world');
+await client.publish('live-updates', 'hello world');
 
 // LISTENING
 const listener = (message, channel) => console.log(message, channel);
-await client.subscribe('myradioshow', listener);
+await client.subscribe('live-updates', listener);
 
 // DISCONNECTING
 await client.disconnect();
