@@ -13,5 +13,12 @@ const client = await createClient(
   .on('error', err => console.log('Redis Client Error', err))
   .connect();
 
+// PUBLISHING
 await client.publish('myradioshow', 'hello world');
+
+// LISTENING
+const listener = (message, channel) => console.log(message, channel);
+await client.subscribe('myradioshow', listener);
+
+// DISCONNECTING
 await client.disconnect();
