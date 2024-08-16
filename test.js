@@ -1,5 +1,6 @@
 import { createClient } from 'redis';
 
+// CONNECTING
 const client = await createClient(
   {
     username: 'default', 
